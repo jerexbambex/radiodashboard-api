@@ -89,7 +89,7 @@
                             <p class="card-text">{{ $team->about }}</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">{{ $team->email }}</li>
+                            <li class="list-group-item"><span class="">Email: </span> {{ $team->email }}</li>
                             <li class="list-group-item">Twitter: {{ $team->twitter ? '@'.$team->twitter : 'No information added yet' }}</li>
                             <li class="list-group-item">Facebook: {{ $team->facebook ? '@'.$team->facebook : 'No information added yet' }}</li>
                             <li class="list-group-item">Instagram: {{ $team->instagram ? '@'.$team->instagram : 'No information added yet' }}</li>

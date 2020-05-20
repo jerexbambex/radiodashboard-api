@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Schedule;
 use App\Team;
 use App\User;
 use Illuminate\Http\Request;
@@ -21,8 +22,9 @@ class DashboardController extends Controller
     {
         $users = User::get();
         $teams = Team::get();
+        $schedules = Schedule::get();
 
-        return view('welcome', compact('users', 'teams'));
+        return view('welcome', compact('users', 'teams', 'schedules'));
     }
 
     /**

@@ -31,15 +31,30 @@
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="firstName1">First name</label>
                                         <input class="form-control" id="firstName1" name="first_name" type="text" placeholder="Enter your first name">
+                                        @error('first_name')
+                                        	<small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="lastName1">Last name</label>
                                         <input class="form-control" id="lastName1" name="last_name" type="text" placeholder="Enter your last name">
+                                        @error('last_name')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="exampleInputEmail1">Email address</label>
                                         <input class="form-control" id="exampleInputEmail1" name="email" type="email" placeholder="Enter email">
                                         <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                        @error('email')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="twitter">Twitter ID</label>
@@ -56,6 +71,11 @@
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="picker2">About</label>
                                         <textarea class="form-control text-left" name="about" placeholder="A short bio about the new member"></textarea>
+                                        @error('about')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="picker1">Image</label>
@@ -64,7 +84,7 @@
 										</div>
                                     </div>
                                     <div class="col-md-12">
-                                        <button class="btn btn-primary ladda-button example-button m-1" data-style="expand-left">
+                                        <button type="submit" class="btn btn-primary ladda-button example-button m-1" data-style="expand-left">
                                         	<span class="ladda-label">Add member</span>
                                         	<span class="ladda-spinner"></span>
                                         	<span class="ladda-spinner"></span>

@@ -201,8 +201,8 @@
                     <li class="nav-item"><a href="/team/create"><i class="nav-icon i-Add-User"></i><span class="item-name">Add Member</span></a></li>
                 </ul>
                 <ul class="childNav" data-parent="schedule">
-                    <li class="nav-item"><a href="/team"><i class="nav-icon i-Clock-3"></i><span class="item-name">View Schedules</span></a></li>
-                    <li class="nav-item"><a href="/team/create"><i class="nav-icon i-Add-User"></i><span class="item-name">Add Schedule</span></a></li>
+                    <li class="nav-item"><a href="/schedule"><i class="nav-icon i-Clock-3"></i><span class="item-name">View Schedules</span></a></li>
+                    <li class="nav-item"><a href="/schedule/create"><i class="nav-icon i-Add-User"></i><span class="item-name">Add Schedule</span></a></li>
                 </ul>
             </div>
             <div class="sidebar-overlay"></div>

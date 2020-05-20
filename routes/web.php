@@ -34,6 +34,17 @@ Route::middleware(['auth','admin'])->group(function () {
 	Route::patch('/team/{team}', 'TeamController@update')->name('team.update');
 	Route::delete('/team/{team}', 'TeamController@destroy')->name('team.destroy');
 	Route::get('/team/{team}/edit', 'TeamController@edit')->name('team.edit');
+
+	/**
+	 * Schedule Routes
+	 */
+	Route::get('/schedule', 'ScheduleController@index')->name('schedule.index');
+	Route::post('/schedule', 'ScheduleController@store')->name('schedule.store');
+	Route::get('/schedule/create', 'ScheduleController@create')->name('schedule.create');
+	Route::get('/schedule/{schedule}', 'ScheduleController@show')->name('schedule.show');
+	Route::patch('/schedule/{schedule}', 'ScheduleController@update')->name('schedule.update');
+	Route::delete('/schedule/{schedule}', 'ScheduleController@destroy')->name('schedule.destroy');
+	Route::get('/schedule/{schedule}/edit', 'ScheduleController@edit')->name('schedule.edit');
 });
 
 

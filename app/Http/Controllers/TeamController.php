@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TeamResource;
+use App\Http\Resources\TeamResourceCollection;
 use App\Team;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -86,17 +88,7 @@ class TeamController extends Controller
             'email' => 'required ',
         ]);
 
-        $team->first_name = $request->first_name;
-        $team->last_name = $request->last_name;
-        $team->email = $request->email;
-        $team->facebook = $request->facebook;
-        $team->twitter = $request->twitter;
-        $team->instagram = $request->instagram;
-        $team->avatar = $request->avatar;
-
-        // dd($team);
-
-        $team->save();
+        $team->update(request()->all());
 
         request()->session()->flash('message', 'The information was updated successfully!');
         return back();
@@ -113,5 +105,24 @@ class TeamController extends Controller
         $team->delete();
 
         return back();
+    }
+
+    /**
+     * [teamIndex description]
+     * @return [type] [description]
+     */
+    public function teamIndex(): TeamResourceCollection
+    {
+        return new TeamResourceCollection(Team::paginate());
+    }
+
+    /**
+     * [memberDisplay description]
+     * @param  Team   $team [description]
+     * @return [type]       [description]
+     */
+    public function teamDisplay(Team $team): TeamResource
+    {
+        return new TeamResource($team);
     }
 }
