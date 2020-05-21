@@ -24,17 +24,28 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            {{-- <div class="col-md-12">
                 <h4>List of programmes</h4>
-            </div>
+            </div> --}}
         </div>
 
         <div class="row">
         	<div class="col-md-12 mb-4">
                 <div class="card text-left">
                     <div class="card-body">
-                        <h4 class="card-title mb-3">Language options</h4>
-                        <p>Changing the language information displayed by DataTables is as simple as passing in a language object to the DataTable constructor. This example shows a different set of English string being used, rather than the defaults.</p>
+                        <div class="col-12">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <h4 class="card-title mb-3">List of programmes</h4>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-sm-12 ml-auto">
+                                <a href="/schedule/create" class="btn btn-rounded btn-primary btn-block mb-4">
+                                    <button class="btn ripple btn-primary btn-icon m-1" type="button">
+                                        <span class="ul-btn__icon"><i class="i-Add-File"></i></span>
+                                        <span class="ul-btn__text">Add new</span>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
                         <div class="table-responsive">
                             <div id="language_option_table_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                 <div class="row">
@@ -99,7 +110,7 @@
                                                             <form method="POST" action="{{ route('schedule.destroy', $schedule->path()) }}">
                                                                 @method('delete')
                                                                 @csrf
-                                                                <button type="submit" class="btn btn-default btn-rounded text-danger">Delete</button>
+                                                                <button type="submit" class="btn btn-default btn-rounded mr-2 text-danger">Delete</button>
                                                             </form>
                                                             <a href="/schedule/{{ $schedule->path() }}/edit" class="btn btn-primary btn-rounded text-white">Edit</a>
                                                         </div>
@@ -113,7 +124,7 @@
                                     </table>
                                     </div>
                                 </div>
-                                {{-- <div class="row">
+                                <div class="row">
                                     <div class="col-sm-12 col-md-5">
                                         <div class="dataTables_info" id="language_option_table_info" role="status" aria-live="polite">Showing page 1 of 2</div>
                                     </div>
@@ -135,7 +146,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>

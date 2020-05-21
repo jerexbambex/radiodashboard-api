@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ScheduleResource;
+use App\Http\Resources\ScheduleResourceCollection;
 use App\Schedule;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,7 @@ class ScheduleController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.schedule.create');
     }
 
     /**
@@ -83,5 +85,24 @@ class ScheduleController extends Controller
     public function destroy(Schedule $schedule)
     {
         //
+    }
+
+    /**
+     * [scheduleIndex description]
+     * @return [type] [description]
+     */
+    public function scheduleIndex(): ScheduleResourceCollection
+    {
+        return new ScheduleResourceCollection(Schedule::paginate());
+    }
+
+    /**
+     * [scheduleDisplay description]
+     * @param  Schedule $schedule [description]
+     * @return [type]             [description]
+     */
+    public function scheduleDisplay(Schedule $schedule): ScheduleResource
+    {
+        return new ScheduleResource($schedule);
     }
 }

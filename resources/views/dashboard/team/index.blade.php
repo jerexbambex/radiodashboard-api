@@ -12,13 +12,21 @@
         <div class="separator-breadcrumb border-top"></div>
 
         <div class="row">
-        	<div class="col-lg-4 col-md-6 col-sm-6">
+        	<div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card card-icon mb-4">
                     <div class="card-body text-center"><i class="i-Data-Upload"></i>
                         <p class="text-muted mt-2 mb-2">Total team members</p>
                         <p class="text-primary text-24 line-height-1 m-0">{{ $teams->count() }}</p>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 ml-auto">
+                <a href="/team/create" class="btn btn-rounded btn-primary btn-block mb-4">
+                    <button class="btn btn-primary btn-icon m-1" type="button">
+                        <span class="ul-btn__icon"><i class="i-Add-File"></i></span>
+                        <span class="ul-btn__text">Add new</span>
+                    </button>
+                </a>
             </div>
             <div class="col-md-12">
                 <h4>List of all team members</h4>

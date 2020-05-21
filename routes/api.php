@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/team', 'TeamController@teamIndex');
 Route::get('/team/{team}', 'TeamController@teamDisplay');
+
+Route::get('/schedule', 'ScheduleController@scheduleIndex');
+Route::get('/schedule/{schedule}', 'ScheduleController@scheduleDisplay');
