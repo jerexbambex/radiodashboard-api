@@ -92,6 +92,17 @@
                                     </div>
 
                                     <div class="col-md-6 form-group mb-3">
+                                        <label for="priority">Priority</label>
+                                        <input class="form-control" id="priority" name="priority" type="text" value="{{ $schedule->priority }}">
+                                        <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                                        @error('priority')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-md-6 form-group mb-3">
                                         <label for="avatar">Image</label>
                                         <div class="input-group mb-3">
 										    <input class="form-control" type="file" name="avatar" value="{{ $schedule->avatar }}">
