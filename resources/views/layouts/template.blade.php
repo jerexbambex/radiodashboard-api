@@ -186,10 +186,22 @@
                     <li class="nav-item"><a class="nav-item-hold" href="/dashboard"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item" data-item="team"><a class="nav-item-hold" href="datatables.html"><i class="nav-icon i-File-Horizontal-Text"></i><span class="nav-text">Teams</span></a>
+                    <li class="nav-item"><a class="nav-item-hold" href="/team"><i class="nav-icon i-Financial"></i><span class="nav-text">Teams</span></a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item" data-item="schedule"><a class="nav-item-hold" href="http://demos.ui-lib.com/gull-html-doc/" target="_blank"><i class="nav-icon i-Safe-Box1"></i><span class="nav-text">Schedule</span></a>
+                    <li class="nav-item"><a class="nav-item-hold" href="/schedule"><i class="nav-icon i-Safe-Box1"></i><span class="nav-text">Schedule</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="/about"><i class="nav-icon i-Administrator"></i><span class="nav-text">About Us</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="/event"><i class="nav-icon i-Library"></i><span class="nav-text">Events</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="/social"><i class="nav-icon i-Internet"></i><span class="nav-text">Social Media</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="/podcast"><i class="nav-icon i-Computer-Secure"></i><span class="nav-text">Podcasts</span></a>
                         <div class="triangle"></div>
                     </li>
                 </ul>

@@ -39,7 +39,18 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = request()->validate([
+            'day' => 'required',
+            'title' =>'required',
+            'description' =>'required',
+            'start_time' => 'required | date_format:H:i',
+            'end_time' => 'required | date_format:H:i'
+        ]);
+
+        Schedule::create($attributes);
+
+        request()->session()->flash('message', 'New programme was added successfully!');
+        return back();
     }
 
     /**
@@ -61,7 +72,7 @@ class ScheduleController extends Controller
      */
     public function edit(Schedule $schedule)
     {
-        //
+        return view('dashboard.schedule.edit', compact('schedule'));
     }
 
     /**
@@ -73,7 +84,18 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
-        //
+        request()->validate([
+            'day' => 'required',
+            'title' =>'required',
+            'description' =>'required',
+            'start_time' => 'required | date_format:H:i',
+            'end_time' => 'required | date_format:H:i'
+        ]);
+
+        $schedule->update(request()->all());
+
+        request()->session()->flash('message', 'The information was updated successfully!');
+        return back();
     }
 
     /**

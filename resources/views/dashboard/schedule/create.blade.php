@@ -20,7 +20,7 @@
                         <div class="card-body">
                         	@if (Session::has('message'))
                         		<div class="alert alert-success" role="alert"><strong class="text-capitalize">Success!</strong> {{ Session::get('message') }}
-                                    <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 </div>
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
@@ -47,54 +47,61 @@
                                         @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
-                                        <label for="lastName1">Last name</label>
-                                        <input class="form-control" id="lastName1" name="last_name" type="text" placeholder="Enter your last name">
-                                        @error('last_name')
+                                        <label for="title">Programme Title</label>
+                                        <input class="form-control" id="title" name="title" type="text" placeholder="Enter the title of the programme">
+                                        @error('title')
                                             <small class="form-control-feedback alert-danger">
                                                 {{ $message }}
                                             </small>
                                         @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input class="form-control" id="exampleInputEmail1" name="email" type="email" placeholder="Enter email">
+                                        <label for="anchor">Anchored by</label>
+                                        <input class="form-control" id="anchor" name="anchor" type="text" placeholder="The presenter anchoring the programme">
                                         <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                                        @error('email')
+                                        @error('anchor')
                                             <small class="form-control-feedback alert-danger">
                                                 {{ $message }}
                                             </small>
                                         @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
-                                        <label for="twitter">Twitter ID</label>
-                                        <input class="form-control" id="twitter" name="twitter" placeholder="your twitter handle">
-                                    </div>
-                                    <div class="col-md-6 form-group mb-3">
-                                        <label for="facebook">Facebook ID</label>
-                                        <input class="form-control" id="facebook" name="facebook" placeholder="your facebook handle">
-                                    </div>
-                                    <div class="col-md-6 form-group mb-3">
-                                        <label for="instagram">Instagram ID</label>
-                                        <input class="form-control" id="instagram" name="instagram" placeholder="your instagram handle">
-                                    </div>
-                                    <div class="col-md-6 form-group mb-3">
-                                        <label for="picker2">About</label>
-                                        <textarea class="form-control text-left" name="about" placeholder="A short bio about the new member"></textarea>
-                                        @error('about')
+                                        <label for="description">Description</label>
+                                        <textarea class="form-control text-left" name="description" placeholder="A description about the programme"></textarea>
+                                        @error('description')
                                             <small class="form-control-feedback alert-danger">
                                                 {{ $message }}
                                             </small>
                                         @enderror
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
-                                        <label for="picker1">Image</label>
+                                        <label for="start_time">Start time</label>
+                                        <input class="form-control" id="start_time" type="time" name="start_time" placeholder="00:00 AM">
+                                        @error('start_time')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="end_time">Stop time</label>
+                                        <input class="form-control" id="end_time" type="time" name="end_time" placeholder="00:00 AM">
+                                        @error('end_time')
+                                            <small class="form-control-feedback alert-danger">
+                                                {{ $message }}
+                                            </small>
+                                        @enderror
+                                    </div>
+
+                                    <div class="col-md-6 form-group mb-3">
+                                        <label for="avatar">Image</label>
                                         <div class="input-group mb-3">
-										    <input class="form-control" type="file">
+										    <input class="form-control" type="file" name="avatar">
 										</div>
                                     </div>
                                     <div class="col-md-12">
                                         <button type="submit" class="btn btn-primary ladda-button example-button m-1" data-style="expand-left">
-                                        	<span class="ladda-label">Add member</span>
+                                        	<span class="ladda-label">Add programme</span>
                                         	<span class="ladda-spinner"></span>
                                         	<span class="ladda-spinner"></span>
                                         </button>

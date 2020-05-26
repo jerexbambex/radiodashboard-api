@@ -26,7 +26,7 @@
                 <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
                     <div class="card-body text-center"><i class="i-Financial"></i>
                         <div class="content">
-                            <p class="text-muted mt-2 mb-0">Team Members</p>
+                            <p class="text-muted mt-2 mb-0">Team</p>
                             <p class="text-primary text-24 line-height-1 mb-2">{{ $teams->count() }}</p>
                         </div>
                     </div>
@@ -46,14 +46,14 @@
                 <div class="card card-icon-bg card-icon-bg-primary o-hidden mb-4">
                     <div class="card-body text-center"><i class="i-Money-2"></i>
                         <div class="content">
-                            <p class="text-muted mt-2 mb-0">Expense</p>
-                            <p class="text-primary text-24 line-height-1 mb-2">$1200</p>
+                            <p class="text-muted mt-2 mb-0">Events</p>
+                            <p class="text-primary text-24 line-height-1 mb-2">10</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-8 col-md-12">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -270,6 +270,6 @@
                     </div>
                 </div>
             </div>
-        </div><!-- end of main-content -->
+        </div> --}}<!-- end of main-content -->
     </div>
 @endsection

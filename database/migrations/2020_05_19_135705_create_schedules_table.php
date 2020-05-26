@@ -22,6 +22,7 @@ class CreateSchedulesTable extends Migration
             $table->string('anchor')->nullable();
             $table->string('avatar')->nullable();
             $table->text('description');
+            $table->string('priority')->nullable()->default(0);
             $table->timestamps();
         });
     }
