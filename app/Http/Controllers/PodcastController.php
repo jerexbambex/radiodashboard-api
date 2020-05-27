@@ -47,7 +47,7 @@ class PodcastController extends Controller
 
         $attributes['title'] = request()->input('title');
         $attributes['url'] = request()->input('url');
-        $attributes['owner_name'] = request()->input('owner_name');
+        $attributes['owner'] = request()->input('owner');
 
         if ($request->hasFile('avatar')) {
             request()->validate([
@@ -103,7 +103,7 @@ class PodcastController extends Controller
 
         $attributes['title'] = request()->input('title');
         $attributes['url'] = request()->input('url');
-        $attributes['owner_name'] = request()->input('owner_name');
+        $attributes['owner'] = request()->input('owner');
 
         if ($request->hasFile('avatar')) {
             request()->validate([

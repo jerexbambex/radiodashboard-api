@@ -21,7 +21,7 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Edit record</div>
-                            <form method="POST" action="{{ route('podcast.update', $podcast->path()) }}">
+                            <form method="POST" action="{{ route('podcast.update', $podcast->path()) }}" enctype="multipart/form-data">
                                 @method('patch')
                             	@csrf
 

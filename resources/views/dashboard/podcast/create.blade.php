@@ -25,7 +25,7 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Add new podcast</div>
-                            <form method="POST" action="{{ route('podcast.store') }}">
+                            <form method="POST" action="{{ route('podcast.store') }}" enctype="multipart/form-data">
                             	@csrf
                                 <div class="row">
                                     <div class="col-md-6 form-group mb-3">
