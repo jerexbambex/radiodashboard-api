@@ -21,8 +21,8 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Edit {{ $team->first_name }}'s record</div>
-                            <form method="POST" action="{{ route('team.update', $team->path()) }}">
-                                @method('patch')
+                            <form method="POST" action="{{ route('team.update', $team->path()) }}" enctype="multipart/form-data">
+                                @method('PATCH')
                             	@csrf
 
                                 <div class="row">

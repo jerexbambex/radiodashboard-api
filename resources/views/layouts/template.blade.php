@@ -252,7 +252,7 @@
     </div>
 
     <!-- ============ Search UI Start ============= -->
-    <div class="search-ui">
+    {{-- <div class="search-ui">
         <div class="search-header">
             <img src="/admin/dist-assets/images/logo.png" alt="" class="logo">
             <button class="search-close btn btn-icon bg-transparent float-right mt-2">
@@ -379,7 +379,7 @@
                 </ul>
             </nav>
         </div>
-    </div>
+    </div> --}}
     <!-- ============ Search UI End ============= -->
     <script src="/admin/dist-assets/js/plugins/jquery-3.3.1.min.js"></script>
     <script src="/admin/dist-assets/js/plugins/bootstrap.bundle.min.js"></script>

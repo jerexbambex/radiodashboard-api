@@ -6,6 +6,7 @@ use App\Event;
 use App\Http\Resources\EventResource;
 use App\Http\Resources\EventResourceCollection;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class EventController extends Controller
 {
@@ -44,7 +45,21 @@ class EventController extends Controller
             'description' => 'required',
             'date' =>'required',
             'time' => 'required',
+            'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
         ]);
+
+        $attributes['name'] = request()->input('name');
+        $attributes['description'] = request()->input('description');
+        $attributes['date'] = request()->input('date');
+        $attributes['time'] = request()->input('time');
+
+        if ($request->hasFile('avatar')) {
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+            // Team::create($attributes);
+        }
 
         Event::create($attributes);
 
@@ -83,14 +98,27 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        $attributes = request()->validate([
+       request()->validate([
             'name' => 'required',
             'description' => 'required',
             'date' =>'required',
             'time' => 'required',
+            'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
         ]);
 
-        $event->update(request()->all());
+        $attributes['name'] = request()->input('name');
+        $attributes['description'] = request()->input('description');
+        $attributes['date'] = request()->input('date');
+        $attributes['time'] = request()->input('time');
+
+        if ($request->hasFile('avatar')) {
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+        }
+
+        $event->update($attributes);
 
         request()->session()->flash('message', 'The information was updated successfully!');
         return back();

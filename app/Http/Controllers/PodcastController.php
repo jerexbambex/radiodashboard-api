@@ -6,6 +6,7 @@ use App\Http\Resources\PodcastResource;
 use App\Http\Resources\PodcastResourceCollection;
 use App\Podcast;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class PodcastController extends Controller
 {
@@ -39,10 +40,24 @@ class PodcastController extends Controller
      */
     public function store(Request $request)
     {
-         $attributes = request()->validate([
+        $attributes = request()->validate([
             'title' => 'required',
             'url' => 'required',
         ]);
+
+        $attributes['title'] = request()->input('title');
+        $attributes['url'] = request()->input('url');
+        $attributes['owner_name'] = request()->input('owner_name');
+
+        if ($request->hasFile('avatar')) {
+            request()->validate([
+                'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
+            ]);
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+        }
 
         Podcast::create($attributes);
 
@@ -81,7 +96,26 @@ class PodcastController extends Controller
      */
     public function update(Request $request, Podcast $podcast)
     {
-        $podcast->update(request()->all());
+        $attributes = request()->validate([
+            'title' => 'required',
+            'url' => 'required',
+        ]);
+
+        $attributes['title'] = request()->input('title');
+        $attributes['url'] = request()->input('url');
+        $attributes['owner_name'] = request()->input('owner_name');
+
+        if ($request->hasFile('avatar')) {
+            request()->validate([
+                'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
+            ]);
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+        }
+
+        $podcast->update($attributes);
 
         request()->session()->flash('message', 'The information was updated successfully!');
         return back();

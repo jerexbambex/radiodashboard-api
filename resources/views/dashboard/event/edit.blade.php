@@ -21,7 +21,7 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Edit event</div>
-                            <form method="POST" action="{{ route('event.update', $event->path()) }}">
+                            <form method="POST" action="{{ route('event.update', $event->path()) }}" enctype="multipart/form-data">
                                 @method('patch')
                             	@csrf
 

@@ -6,6 +6,7 @@ use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\ScheduleResourceCollection;
 use App\Schedule;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class ScheduleController extends Controller
 {
@@ -39,13 +40,38 @@ class ScheduleController extends Controller
      */
     public function store(Request $request)
     {
-        $attributes = request()->validate([
+        // dd($request->all());
+        request()->validate([
             'day' => 'required',
-            'title' =>'required',
-            'description' =>'required',
-            'start_time' => 'required | date_format:H:i',
-            'end_time' => 'required | date_format:H:i'
+            'title' => 'required',
+            'description' => 'required',
+            'start_time' => 'required',
+            'end_time' => 'required',
         ]);
+
+        // dd($request->all());
+
+        $attributes['day'] = request()->input('day');
+        $attributes['title'] = request()->input('title');
+        $attributes['description'] = request()->input('description');
+        $attributes['start_time'] = request()->input('start_time');
+        $attributes['end_time'] = request()->input('end_time');
+        $attributes['anchor'] = request()->input('anchor');
+        $attributes['priority'] = request()->input('priority');
+
+        // dd($attributes);
+
+        if ($request->hasFile('avatar')) {
+            //return 'Good From Here';
+            request()->validate([
+                'avatar'=> 'mimes:jpeg,bmp,jpg,png|between:1, 6000',
+            ]);
+
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+        }
 
         Schedule::create($attributes);
 
@@ -84,15 +110,33 @@ class ScheduleController extends Controller
      */
     public function update(Request $request, Schedule $schedule)
     {
-        request()->validate([
+        $attributes = request()->validate([
             'day' => 'required',
             'title' =>'required',
             'description' =>'required',
-            'start_time' => 'required | date_format:H:i',
-            'end_time' => 'required | date_format:H:i'
+            'start_time' => 'required',
+            'end_time' => 'required',
         ]);
 
-        $schedule->update(request()->all());
+        $attributes['day'] = request()->input('day');
+        $attributes['title'] = request()->input('title');
+        $attributes['description'] = request()->input('description');
+        $attributes['start_time'] = request()->input('start_time');
+        $attributes['end_time'] = request()->input('end_time');
+        $attributes['anchor'] = request()->input('anchor');
+        $attributes['priority'] = request()->input('priority');
+
+        if ($request->hasFile('avatar')) {
+            request()->validate([
+                'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
+            ]);
+            Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+            $cloundary_upload = Cloudder::getResult();
+
+            $attributes['avatar'] = $cloundary_upload['secure_url'];
+        }
+
+        $schedule->update($attributes);
 
         request()->session()->flash('message', 'The information was updated successfully!');
         return back();

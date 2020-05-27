@@ -22,7 +22,7 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Add new schedule</div>
-                            <form method="POST" action="{{ route('schedule.update', $schedule->path()) }}">
+                            <form method="POST" action="{{ route('schedule.update', $schedule->path()) }}" enctype="multipart/form-data">
                             	@csrf
                                 @method('PATCH')
                                 <div class="row">
@@ -105,7 +105,7 @@
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="avatar">Image</label>
                                         <div class="input-group mb-3">
-										    <input class="form-control" type="file" name="avatar" value="{{ $schedule->avatar }}">
+										    <input class="form-control" type="file" name="avatar">
 										</div>
                                     </div>
                                     <div class="col-md-12">

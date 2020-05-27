@@ -25,7 +25,7 @@
 							    {{-- <div class="alert alert-info">{{ Session::get('message1') }}</div> --}}
 							@endif
                             <div class="card-title mb-3">Add new member to the team</div>
-                            <form method="POST" action="{{ route('team.store') }}">
+                            <form method="POST" action="{{ route('team.store') }}" enctype="multipart/form-data">
                             	@csrf
                                 <div class="row">
                                     <div class="col-md-6 form-group mb-3">
@@ -80,7 +80,7 @@
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="picker1">Image</label>
                                         <div class="input-group mb-3">
-										    <input class="form-control" type="file">
+										    <input class="form-control" type="file" name="avatar">
 										</div>
                                     </div>
                                     <div class="col-md-12">

@@ -47,7 +47,7 @@
                     <div class="card-body text-center"><i class="i-Money-2"></i>
                         <div class="content">
                             <p class="text-muted mt-2 mb-0">Events</p>
-                            <p class="text-primary text-24 line-height-1 mb-2">10</p>
+                            <p class="text-primary text-24 line-height-1 mb-2">{{ $events->count() }}</p>
                         </div>
                     </div>
                 </div>
