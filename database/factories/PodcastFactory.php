@@ -10,6 +10,5 @@ $factory->define(Podcast::class, function (Faker $faker) {
         'title' => $faker->sentence($nbWords = 3),
         'url' => $faker->url,
         'owner' => $faker->name,
-        'avatar' => $faker->imageUrl($width = 640, $height = 480),
     ];
 });

@@ -19,7 +19,7 @@ class CreateTeamsTable extends Migration
             $table->string('last_name');
             $table->text('about');
             $table->string('email');
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->nullable()->default('https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png');
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();

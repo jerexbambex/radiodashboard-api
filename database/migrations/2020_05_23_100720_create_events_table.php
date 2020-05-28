@@ -19,7 +19,7 @@ class CreateEventsTable extends Migration
             $table->text('description');
             $table->date('date');
             $table->time('time');
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->nullable()->default('https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png');
             $table->timestamps();
         });
     }

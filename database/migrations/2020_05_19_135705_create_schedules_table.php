@@ -20,7 +20,7 @@ class CreateSchedulesTable extends Migration
             $table->string('end_time');
             $table->string('title');
             $table->string('anchor')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->nullable()->default('https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png');
             $table->text('description');
             $table->string('priority')->nullable()->default(0);
             $table->timestamps();
