@@ -89,6 +89,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::patch('/about/{about}', 'AboutController@update')->name('about.update');
 	Route::delete('/about/{about}', 'AboutController@destroy')->name('about.destroy');
 	Route::get('/about/{about}/edit', 'AboutController@edit')->name('about.edit');
+
+
+	Route::resource('/video', 'VideoController');
+	Route::resource('/detail', 'DetailController');
+	Route::resource('/slider', 'SliderController');
+	Route::resource('/fan', 'FansController');
+	Route::resource('/subcsribe', 'SubcsribeController');
+	Route::resource('/contact', 'ContactController');
 });
 
 

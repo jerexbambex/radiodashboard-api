@@ -48,7 +48,7 @@
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="time">Time</label>
-                                        <input class="form-control" id="time" name="time" type="time" placeholder="What time is the event?">
+                                        <input class="form-control" id="time" name="time" type="time" min="00:00" max="24:00" placeholder="What time is the event?">
                                         <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
                                         @error('time')
                                             <small class="form-control-feedback alert-danger">

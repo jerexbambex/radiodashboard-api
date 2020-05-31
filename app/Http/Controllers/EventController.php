@@ -151,8 +151,8 @@ class EventController extends Controller
      * @param  Event  $Event [description]
      * @return [type]        [description]
      */
-    public function eventDisplay(Event $Event): EventResource
+    public function eventDisplay(Event $event): EventResource
     {
-        return new EventResource($team);
+        return new EventResource($event);
     }
 }

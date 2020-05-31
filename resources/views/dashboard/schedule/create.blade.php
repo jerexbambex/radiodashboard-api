@@ -76,7 +76,7 @@
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="start_time">Start time</label>
-                                        <input class="form-control" id="start_time" type="time" name="start_time" placeholder="00:00 AM">
+                                        <input class="form-control" id="start_time" type="time" step="2" min="00:00" max="24:00" name="start_time" placeholder="00:00 AM">
                                         @error('start_time')
                                             <small class="form-control-feedback alert-danger">
                                                 {{ $message }}
@@ -85,7 +85,7 @@
                                     </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="end_time">Stop time</label>
-                                        <input class="form-control" id="end_time" type="time" name="end_time" placeholder="00:00 AM">
+                                        <input class="form-control" id="end_time" type="time" step="2" min="00:00" max="24:00" name="end_time" placeholder="00:00 AM">
                                         @error('end_time')
                                             <small class="form-control-feedback alert-danger">
                                                 {{ $message }}

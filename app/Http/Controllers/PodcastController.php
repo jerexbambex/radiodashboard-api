@@ -129,7 +129,7 @@ class PodcastController extends Controller
      */
     public function destroy(Podcast $podcast)
     {
-         $podcast->delete();
+        $podcast->delete();
 
         return back();
     }
