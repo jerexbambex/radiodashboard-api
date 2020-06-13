@@ -21,12 +21,30 @@ CREATE TABLE IF NOT EXISTS `abouts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.abouts: ~1 rows (approximately)
+-- Dumping data for table radio.abouts: ~0 rows (approximately)
 DELETE FROM `abouts`;
 /*!40000 ALTER TABLE `abouts` DISABLE KEYS */;
 INSERT INTO `abouts` (`id`, `body`, `created_at`, `updated_at`) VALUES
-	(1, 'CHAPTER IV. The Rabbit Sends in a Little Bill It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself \'The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She\'ll get me executed, as sure as ferrets are ferrets! Where CAN I have dropped them, I wonder?\' Alice guessed in a moment.', '2020-05-28 10:56:04', '2020-05-28 10:56:04');
+	(1, 'CHAPTER IV. The Rabbit Sends in a Little Bill It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself \'The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She\'ll get me executed, as sure as ferrets are ferrets! Where CAN I have dropped them, I wonder?\' Alice guessed in a moment.\r\n\r\nThe Rabbit Sends in a Little Bill It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself \'The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She\'ll get me executed, as sure as ferrets are ferrets! Where CAN I have dropped them, I wonder?\' Alice guessed in a moment.\r\n\r\nThe Rabbit Sends in a Little Bill It was the White Rabbit, trotting slowly back again, and looking anxiously about as it went, as if it had lost something; and she heard it muttering to itself \'The Duchess! The Duchess! Oh my dear paws! Oh my fur and whiskers! She\'ll get me executed, as sure as ferrets are ferrets! Where CAN I have dropped them, I wonder?\' Alice guessed in a moment.', '2020-05-28 10:56:04', '2020-05-29 12:43:41');
 /*!40000 ALTER TABLE `abouts` ENABLE KEYS */;
+
+-- Dumping structure for table radio.contacts
+DROP TABLE IF EXISTS `contacts`;
+CREATE TABLE IF NOT EXISTS `contacts` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table radio.contacts: ~0 rows (approximately)
+DELETE FROM `contacts`;
+/*!40000 ALTER TABLE `contacts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `contacts` ENABLE KEYS */;
 
 -- Dumping structure for table radio.details
 DROP TABLE IF EXISTS `details`;
@@ -34,6 +52,9 @@ CREATE TABLE IF NOT EXISTS `details` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -60,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `events` (
 DELETE FROM `events`;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
 INSERT INTO `events` (`id`, `name`, `description`, `date`, `time`, `avatar`, `created_at`, `updated_at`) VALUES
-	(1, 'Sed sit laboriosam quidem.', 'Take your choice!\' The Duchess took her choice, and was gone in a moment. \'Let\'s go on with the game,\' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground. The other guests had taken advantage of the Queen\'s absence, and were resting in the shade: however, the moment they saw her, they hurried back to the game, the Queen.', '1979-07-19', '23:07:47', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', '2020-05-28 10:55:55', '2020-05-28 10:55:55'),
+	(1, 'Oluwaseun sit laboriosam quidem.', 'Take your choice!\' The Duchess took her choice, and was gone in a moment. \'Let\'s go on with the game,\' the Queen said to Alice; and Alice was too much frightened to say a word, but slowly followed her back to the croquet-ground. The other guests had taken advantage of the Queen\'s absence, and were resting in the shade: however, the moment they saw her, they hurried back to the game, the Queen.', '2020-07-19', '22:00:00', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590952735/q0b1yhat5jrwks9zh2hw.jpg', '2020-05-28 10:55:55', '2020-05-31 19:19:42'),
 	(2, 'Tempore autem.', 'There was certainly too much of it in the air. Even the Duchess sneezed occasionally; and as for the baby, it was sneezing and howling alternately without a moment\'s pause. The only things in the kitchen that did not sneeze, were the cook, and a large cat which was sitting on the hearth and grinning from ear to ear. \'Please would you tell me,\' said Alice, a little timidly, for she was not quite.', '1984-05-28', '12:48:05', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', '2020-05-28 10:55:55', '2020-05-28 10:55:55'),
 	(3, 'Distinctio doloribus labore natus.', 'Alice soon came to the conclusion that it was a very difficult game indeed. The players all played at once without waiting for turns, quarrelling all the while, and fighting for the hedgehogs; and in a very short time the Queen was in a furious passion, and went stamping about, and shouting \'Off with his head!\' or \'Off with her head!\' Those whom she sentenced were taken into custody by the.', '2008-12-04', '04:25:45', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', '2020-05-28 10:55:55', '2020-05-28 10:55:55'),
 	(4, 'Corporis reprehenderit vel.', 'There was no \'One, two, three, and away,\' but they began running when they liked, and left off when they liked, so that it was not easy to know when the race was over. However, when they had been running half an hour or so, and were quite dry again, the Dodo suddenly called out \'The race is over!\' and they all crowded round it, panting, and asking, \'But who has won?\' This question the Dodo could.', '2000-12-14', '17:38:41', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', '2020-05-28 10:55:55', '2020-05-28 10:55:55'),
@@ -84,6 +105,26 @@ DELETE FROM `failed_jobs`;
 /*!40000 ALTER TABLE `failed_jobs` DISABLE KEYS */;
 /*!40000 ALTER TABLE `failed_jobs` ENABLE KEYS */;
 
+-- Dumping structure for table radio.fans
+DROP TABLE IF EXISTS `fans`;
+CREATE TABLE IF NOT EXISTS `fans` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `fullname` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `instagram` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table radio.fans: ~0 rows (approximately)
+DELETE FROM `fans`;
+/*!40000 ALTER TABLE `fans` DISABLE KEYS */;
+/*!40000 ALTER TABLE `fans` ENABLE KEYS */;
+
 -- Dumping structure for table radio.migrations
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -91,9 +132,9 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.migrations: ~11 rows (approximately)
+-- Dumping data for table radio.migrations: ~18 rows (approximately)
 DELETE FROM `migrations`;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -106,8 +147,15 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 	(45, '2020_05_23_104209_create_podcasts_table', 1),
 	(46, '2020_05_23_104250_create_socials_table', 1),
 	(47, '2020_05_23_104313_create_abouts_table', 1),
-	(48, '2020_05_28_062823_create_videos_table', 1),
-	(49, '2020_05_28_095546_create_details_table', 1);
+	(75, '2020_05_28_062823_create_videos_table', 2),
+	(76, '2020_05_28_095546_create_details_table', 2),
+	(77, '2020_05_29_190301_create_sliders_table', 2),
+	(78, '2020_05_29_191055_create_fans_table', 2),
+	(79, '2020_05_29_200306_create_subscribes_table', 2),
+	(80, '2020_05_29_200720_create_contacts_table', 2),
+	(81, '2020_05_31_123124_add_position_to_teams_table', 2),
+	(87, '2020_05_31_192931_add_address_to_details_table', 3),
+	(88, '2020_05_31_203615_add_fullname_to_fans_table', 3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 -- Dumping structure for table radio.password_resets
@@ -163,20 +211,13 @@ CREATE TABLE IF NOT EXISTS `schedules` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.schedules: ~50 rows (approximately)
+-- Dumping data for table radio.schedules: ~46 rows (approximately)
 DELETE FROM `schedules`;
 /*!40000 ALTER TABLE `schedules` DISABLE KEYS */;
 INSERT INTO `schedules` (`id`, `day`, `start_time`, `end_time`, `title`, `anchor`, `avatar`, `description`, `priority`, `created_at`, `updated_at`) VALUES
-	(1, 'Wednesday', '18:04:48', '20:40:18', 'Footman remarked, \'till tomorrow--\' At this.', 'Justice Ortiz', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'Lizard as she spoke. (The unfortunate little Bill had left off writing on his slate with one finger, as he found it made no mark; but he now hastily began again, using the ink, that was trickling down his face, as long as it lasted.) \'Then the words don\'t FIT you,\' said the King, looking round the court with a smile. There was a dead silence. \'It\'s a pun!\' the King added in an offended tone, and.', '0', '2020-05-28 10:56:31', '2020-05-28 10:56:31'),
-	(2, 'Saturday', '18:31:05', '14:51:11', 'Majesty,\' said Two, in a solemn tone, only.', 'Dr. Dangelo Skiles MD', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I meant,\' the King hastily said, and went on to himself in an undertone, \'important--unimportant--unimportant--important--\' as if he were trying which word sounded best. Some of the jury wrote it down \'important,\' and some \'unimportant.\' Alice could see this, as she was near enough to look over their slates; \'but it doesn\'t matter a bit,\' she thought to herself. At this moment the King, who had.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(3, 'Wednesday', '02:30:04', '15:09:09', 'Soup," will you, won\'t you join the dance? Will.', 'Mrs. Dena Sanford DDS', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I was sent for.\' \'You ought to have finished,\' said the King. \'When did you begin?\' The Hatter looked at the March Hare, who had followed him into the court, arm-in-arm with the Dormouse. \'Fourteenth of March, I think it was,\' he said. \'Fifteenth,\' said the March Hare. \'Sixteenth,\' added the Dormouse. \'Write that down,\' the King said to the Hatter. \'It isn\'t mine,\' said the Hatter. \'Stolen!\' the.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(4, 'Sunday', '09:31:02', '10:52:39', 'However, I\'ve got to the beginning again?\' Alice.', 'Corene Wehner', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I beg your pardon!\' cried Alice hastily, afraid that she had hurt the poor animal\'s feelings. \'I quite forgot you didn\'t like cats.\' \'Not like cats!\' cried the Mouse, in a shrill, passionate voice. \'Would YOU like cats if you were me?\' \'Well, perhaps not,\' said Alice in a soothing tone: \'don\'t be angry about it. And yet I wish I could show you our cat Dinah: I think you\'d take a fancy to cats if.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(5, 'Wednesday', '11:35:43', '12:17:22', 'Mock Turtle angrily: \'really you are painting.', 'Raleigh Walter', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I can\'t get out at the door--I do wish I hadn\'t drunk quite so much!\' Alas! it was too late to wish that! She went on growing, and growing, and very soon had to kneel down on the floor: in another minute there was not even room for this, and she tried the effect of lying down with one elbow against the door, and the other arm curled round her head. Still she went on growing, and, as a last.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(6, 'Saturday', '04:24:47', '02:01:23', 'But she waited for a minute or two she stood.', 'Jameson Altenwerth', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I should think very likely it can talk: at any rate, there\'s no harm in trying.\' So she began: \'O Mouse, do you know the way out of this pool? I am very tired of swimming about here, O Mouse!\' (Alice thought this must be the right way of speaking to a mouse: she had never done such a thing before, but she remembered having seen in her brother\'s Latin Grammar, \'A mouse--of a mouse--to a mouse--a.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(7, 'Tuesday', '10:54:37', '10:14:40', 'William the Conqueror.\' (For, with all speed.', 'Vincent Boyer Sr.', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'I THINK I can kick a little!\' She drew her foot as far down the chimney as she could, and waited till she heard a little animal (she couldn\'t guess of what sort it was) scratching and scrambling about in the chimney close above her: then, saying to herself \'This is Bill,\' she gave one sharp kick, and waited to see what would happen next. The first thing she heard was a general chorus of \'There.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
-	(8, 'Wednesday', '04:20:15', '15:15:41', 'She said the King, \'and don\'t look at them--\'I.', 'Tiara Kuhn', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'That your eye was as steady as ever; Yet you balanced an eel on the end of your nose-- What made you so awfully clever?\' \'I have answered three questions, and that is enough,\' Said his father; \'don\'t give yourself airs! Do you think I can listen all day to such stuff? Be off, or I\'ll kick you down stairs!\' \'That is not said right,\' said the Caterpillar. \'Not QUITE right, I\'m afraid,\' said Alice.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
+	(8, 'Sunday', '01:00', '14:00', 'Jerry said the King, \'and don\'t look at them--\'I.', 'Ojerry', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'That your eye was as steady as ever; Yet you balanced an eel on the end of your nose-- What made you so awfully clever?\' \'I have answered three questions, and that is enough,\' Said his father; \'don\'t give yourself airs! Do you think I can listen all day to such stuff? Be off, or I\'ll kick you down stairs!\' \'That is not said right,\' said the Caterpillar. \'Not QUITE right, I\'m afraid,\' said Alice.', '0', '2020-05-28 10:56:32', '2020-05-29 12:29:48'),
 	(9, 'Friday', '01:08:26', '19:27:27', 'King: \'however, it may kiss my hand if it began.', 'Ardith Abernathy', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'King sharply. \'Do you take me for a dunce? Go on!\' \'I\'m a poor man,\' the Hatter went on, \'and most things twinkled after that--only the March Hare said--\' \'I didn\'t!\' the March Hare interrupted in a great hurry. \'You did!\' said the Hatter. \'I deny it!\' said the March Hare. \'He denies it,\' said the King: \'leave out that part.\' \'Well, at any rate, the Dormouse said--\' the Hatter went on, looking.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
 	(10, 'Wednesday', '21:32:37', '06:39:56', 'I eat one of the garden, where Alice could think.', 'Mrs. Florine Schroeder DVM', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'Duchess said in a hoarse growl, \'the world would go round a deal faster than it does.\' \'Which would NOT be an advantage,\' said Alice, who felt very glad to get an opportunity of showing off a little of her knowledge. \'Just think of what work it would make with the day and night! You see the earth takes twenty-four hours to turn round on its axis--\' \'Talking of axes,\' said the Duchess, \'chop off.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
 	(11, 'Friday', '07:10:12', '03:16:51', 'How puzzling all these strange Adventures of.', 'Katrina Langworth DVM', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'It was opened by another footman in livery, with a round face, and large eyes like a frog; and both footmen, Alice noticed, had powdered hair that curled all over their heads. She felt very curious to know what it was all about, and crept a little way out of the wood to listen. The Fish-Footman began by producing from under his arm a great letter, nearly as large as himself, and this he handed.', '0', '2020-05-28 10:56:32', '2020-05-28 10:56:32'),
@@ -218,8 +259,24 @@ INSERT INTO `schedules` (`id`, `day`, `start_time`, `end_time`, `title`, `anchor
 	(47, 'Monday', '15:38:29', '22:29:10', 'Mock Turtle replied; \'and then the Mock Turtle.', 'Jerad Cummings', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'But the snail replied "Too far, too far!" and gave a look askance-- Said he thanked the whiting kindly, but he would not join the dance. Would not, could not, would not, could not, would not join the dance. Would not, could not, would not, could not, could not join the dance. \'"What matters it how far we go?" his scaly friend replied. "There is another shore, you know, upon the other side. The.', '0', '2020-05-28 10:56:34', '2020-05-28 10:56:34'),
 	(48, 'Monday', '05:36:01', '05:28:55', 'Alice said; but was dreadfully puzzled by the.', 'Demarcus Orn', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'The other guests had taken advantage of the Queen\'s absence, and were resting in the shade: however, the moment they saw her, they hurried back to the game, the Queen merely remarking that a moment\'s delay would cost them their lives. All the time they were playing the Queen never left off quarrelling with the other players, and shouting \'Off with his head!\' or \'Off with her head!\' Those whom.', '0', '2020-05-28 10:56:35', '2020-05-28 10:56:35'),
 	(49, 'Wednesday', '09:39:06', '06:43:55', 'I\'ll never go THERE again!\' said Alice sadly.', 'Mariam Kling', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'IS it to be managed? I suppose I ought to eat or drink something or other; but the great question is, what?\' The great question certainly was, what? Alice looked all round her at the flowers and the blades of grass, but she did not see anything that looked like the right thing to eat or drink under the circumstances. There was a large mushroom growing near her, about the same height as herself.', '0', '2020-05-28 10:56:35', '2020-05-28 10:56:35'),
-	(50, 'Wednesday', '10:01:04', '19:09:50', 'Alice, \'when one wasn\'t always growing larger.', 'Alessandro Smith', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'Dormouse followed him: the March Hare moved into the Dormouse\'s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: \'But I.', '0', '2020-05-28 10:56:35', '2020-05-28 10:56:35');
+	(50, 'Wednesday', '10:01:04', '19:09:50', 'Alice, \'when one wasn\'t always growing larger.', 'Alessandro Smith', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'Dormouse followed him: the March Hare moved into the Dormouse\'s place, and Alice rather unwillingly took the place of the March Hare. The Hatter was the only one who got any advantage from the change: and Alice was a good deal worse off than before, as the March Hare had just upset the milk-jug into his plate. Alice did not wish to offend the Dormouse again, so she began very cautiously: \'But I.', '0', '2020-05-28 10:56:35', '2020-05-28 10:56:35'),
+	(51, 'Saturday', '00:00', '22:00', 'This is the title', 'Ojerry', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png', 'qwertyuiop asdfghjk', NULL, '2020-05-29 07:22:26', '2020-05-29 07:22:26');
 /*!40000 ALTER TABLE `schedules` ENABLE KEYS */;
+
+-- Dumping structure for table radio.sliders
+DROP TABLE IF EXISTS `sliders`;
+CREATE TABLE IF NOT EXISTS `sliders` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table radio.sliders: ~0 rows (approximately)
+DELETE FROM `sliders`;
+/*!40000 ALTER TABLE `sliders` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sliders` ENABLE KEYS */;
 
 -- Dumping structure for table radio.socials
 DROP TABLE IF EXISTS `socials`;
@@ -234,12 +291,29 @@ CREATE TABLE IF NOT EXISTS `socials` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.socials: ~0 rows (approximately)
+-- Dumping data for table radio.socials: ~1 rows (approximately)
 DELETE FROM `socials`;
 /*!40000 ALTER TABLE `socials` DISABLE KEYS */;
+INSERT INTO `socials` (`id`, `facebook`, `instagram`, `linkedin`, `pinterest`, `twitter`, `youtube`, `created_at`, `updated_at`) VALUES
+	(1, 'jobradiofacebook', 'jobradio', 'jobradio', 'jobradio', 'jobradio', 'jobradio', '2020-05-31 06:35:17', '2020-05-31 14:04:14');
 /*!40000 ALTER TABLE `socials` ENABLE KEYS */;
+
+-- Dumping structure for table radio.subscribes
+DROP TABLE IF EXISTS `subscribes`;
+CREATE TABLE IF NOT EXISTS `subscribes` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table radio.subscribes: ~0 rows (approximately)
+DELETE FROM `subscribes`;
+/*!40000 ALTER TABLE `subscribes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subscribes` ENABLE KEYS */;
 
 -- Dumping structure for table radio.teams
 DROP TABLE IF EXISTS `teams`;
@@ -249,6 +323,7 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `about` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'OAP',
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590662468/radio/logo.jira.png',
   `twitter` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `facebook` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -256,51 +331,36 @@ CREATE TABLE IF NOT EXISTS `teams` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.teams: ~1 rows (approximately)
+-- Dumping data for table radio.teams: ~2 rows (approximately)
 DELETE FROM `teams`;
 /*!40000 ALTER TABLE `teams` DISABLE KEYS */;
-INSERT INTO `teams` (`id`, `first_name`, `last_name`, `about`, `email`, `avatar`, `twitter`, `facebook`, `instagram`, `created_at`, `updated_at`) VALUES
-	(6, 'Ogunniyi', 'Jeremiah', 'A very good boy and God fearing christian', 'jerexbambex@gmail.com', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590663624/qgwaz0axjkj6fwedrq3w.jpg', 'jerexbambex', 'jerexbambex', 'jerexbambex', '2020-05-28 10:59:22', '2020-05-28 11:00:23');
+INSERT INTO `teams` (`id`, `first_name`, `last_name`, `about`, `email`, `position`, `avatar`, `twitter`, `facebook`, `instagram`, `created_at`, `updated_at`) VALUES
+	(6, 'Ogunniyi', 'Jeremiah', 'A very good boy and God fearing christian', 'jerexbambex@gmail.com', 'OAP', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590663624/qgwaz0axjkj6fwedrq3w.jpg', 'jerexbambex', 'jerexbambex', 'jerexbambex', '2020-05-28 10:59:22', '2020-05-28 11:00:23'),
+	(7, 'Tolulope', 'Ogunniyi', 'A very reserved person', 'toluwani09@hotmail.com', 'OAP', 'https://res.cloudinary.com/dj6bwuwu6/image/upload/v1590937173/tsmb7p1llsbwrwkqomts.jpg', NULL, NULL, NULL, '2020-05-31 14:59:31', '2020-05-31 14:59:31');
 /*!40000 ALTER TABLE `teams` ENABLE KEYS */;
-
--- Dumping structure for table radio.users
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `first_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'user',
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Dumping data for table radio.users: ~2 rows (approximately)
-DELETE FROM `users`;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-	(1, 'Oluwatosin', 'Ogunniyi', 'jerexbambex@gmail.com', NULL, '$2y$10$mNVyhfSWGJpxTWseT7/y9uGrru9N1TmKkUy3D.am4bLOlv.ZN9NT.', 'admin', NULL, '2020-05-28 10:57:38', '2020-05-28 10:57:38'),
-	(2, 'Taiwo', 'Babalola', 'beto@gmail.com', NULL, '$2y$10$XlqerILNDrzUP9afazpWdO7m/rrk1dStVQf7PR.PHnYK1d0Z1lsEu', 'admin', NULL, '2020-05-28 14:26:05', '2020-05-28 14:26:05');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table radio.videos
 DROP TABLE IF EXISTS `videos`;
 CREATE TABLE IF NOT EXISTS `videos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table radio.videos: ~0 rows (approximately)
+-- Dumping data for table radio.videos: ~5 rows (approximately)
 DELETE FROM `videos`;
 /*!40000 ALTER TABLE `videos` DISABLE KEYS */;
+INSERT INTO `videos` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
+	(1, 'Video Test', 'https://www.youtube.com/embed/ZEiwpCJqMM0', '2020-05-31 14:38:14', '2020-05-31 14:38:14'),
+	(2, 'Video Test', 'https://www.youtube.com/embed/ZEiwpCJqMM0', '2020-05-31 14:38:14', '2020-05-31 14:38:14'),
+	(3, 'Video Test', 'https://www.youtube.com/embed/ZEiwpCJqMM0', '2020-05-31 14:38:14', '2020-05-31 14:38:14'),
+	(4, 'Video Test', 'https://www.youtube.com/embed/ZEiwpCJqMM0', '2020-05-31 14:38:14', '2020-05-31 14:38:14'),
+	(5, 'Video Test', 'https://www.youtube.com/embed/ZEiwpCJqMM0', '2020-05-31 14:38:14', '2020-05-31 14:38:14');
 /*!40000 ALTER TABLE `videos` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

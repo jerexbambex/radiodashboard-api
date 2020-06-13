@@ -103,7 +103,7 @@ class SocialController extends Controller
      */
     public function socialIndex(): SocialResourceCollection
     {
-        return new SocialResourceCollection(Social::paginate());
+        return new SocialResourceCollection(Social::get());
     }
 
     /**

@@ -112,6 +112,6 @@ class AboutController extends Controller
 
     public function aboutIndex(): AboutResourceCollection
     {
-        return new AboutResourceCollection(About::paginate());
+        return new AboutResourceCollection(About::get());
     }
 }

@@ -95,10 +95,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 	Route::resource('/detail', 'DetailController');
 	Route::resource('/slider', 'SliderController');
 	Route::resource('/fan', 'FansController');
-	Route::resource('/subcsribe', 'SubcsribeController');
+	Route::resource('/subscribe', 'SubscribeController');
 	Route::resource('/contact', 'ContactController');
 });
 
 
 
 
+// https://youtu.be/ZEiwpCJqMM0

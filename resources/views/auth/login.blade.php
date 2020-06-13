@@ -8,14 +8,25 @@
     <title>Signin | Radio Dashboard</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet">
     <link href="/admin/dist-assets/css/themes/lite-purple.min.css" rel="stylesheet">
+    <style>
+        /*.auth-layout-wrap {
+            background-image: url(/admin/dist-assets/images/Hinterrhein.png);
+            background-color: #5e478a;
+            position: relative;
+        }
+        .auth-layout-wrap::before {
+            opacity: 0.3;
+            position: absolute;
+        }*/
+    </style>
 </head>
-<div class="auth-layout-wrap" style="background-image: url(/admin/dist-assets/images/Hinterrhein.png); background-repeat: no-repeat;">
+<div class="auth-layout-wrap">
     <div class="auth-content">
         <div class="card o-hidden">
             <div class="row">
                 <div class="col-md-6">
                     <div class="p-4">
-                        <div class="auth-logo text-center mb-4"><img src="/admin/dist-assets/images/logo.png" alt=""></div>
+                        <div class="auth-logo text-center mb-4"><img src="/admin/dist-assets/images/logo.jira.png" alt=""></div>
                         <h1 class="mb-3 text-18">Sign In</h1>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf

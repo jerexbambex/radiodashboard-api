@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SliderResource;
+use App\Http\Resources\SliderResourceCollection;
 use App\Slider;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class SliderController extends Controller
 {
@@ -14,7 +17,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $sliders = Slider::all();
+
+        return view('dashboard.slider.index', compact('sliders'));
     }
 
     /**
@@ -24,7 +29,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.slider.create');
     }
 
     /**
@@ -35,7 +40,19 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'avatar'=>'mimes:jpeg,bmp,jpg,png|between:1, 6000',
+        ]);
+
+        Cloudder::upload($request->file('avatar'), null, array("quality"=>"auto", "fetch_format"=>"auto"));
+        $cloundary_upload = Cloudder::getResult();
+
+        $attributes['avatar'] = $cloundary_upload['secure_url'];
+
+        Slider::create($attributes);
+
+        request()->session()->flash('message', 'New image was added successfully!');
+        return back();
     }
 
     /**
@@ -80,6 +97,27 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+
+        return back();
+    }
+
+    /**
+     * [sliderIndex description]
+     * @return [type] [description]
+     */
+    public function sliderIndex(): SliderResourceCollection
+    {
+        return new SliderResourceCollection(Slider::inRandomOrder()->get());
+    }
+
+    /**
+     * [sliderDisplay description]
+     * @param  Slider $slider [description]
+     * @return [type]         [description]
+     */
+    public function sliderDisplay(Slider $slider): SliderResource
+    {
+        return new SliderResource($slider);
     }
 }

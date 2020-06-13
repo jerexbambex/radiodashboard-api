@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Event;
+use App\Podcast;
 use App\Schedule;
 use App\Team;
 use App\User;
@@ -25,8 +27,10 @@ class DashboardController extends Controller
         $teams = Team::get();
         $schedules = Schedule::get();
         $events = Event::get();
+        $mails = Contact::get();
+        $podcasts = Podcast::get();
 
-        return view('welcome', compact('users', 'teams', 'schedules', 'events'));
+        return view('welcome', compact('users', 'teams', 'schedules', 'events', 'mails', 'podcasts'));
     }
 
     /**

@@ -143,7 +143,7 @@ class EventController extends Controller
      */
     public function eventIndex(): EventResourceCollection
     {
-        return new EventResourceCollection(Event::paginate());
+        return new EventResourceCollection(Event::get());
     }
 
     /**

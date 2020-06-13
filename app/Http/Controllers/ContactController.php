@@ -14,7 +14,9 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $mails = Contact::all();
+
+        return view('dashboard.contact.index', compact('mails'));
     }
 
     /**
@@ -35,7 +37,18 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'fullname' => 'required',
+            'email' => 'required | email',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+
+        $contact = Contact::create(request()->all());
+        $message = "Thank you " .request()->fullname . ". Your message was sent successfully";
+        $result = (object) array('result' => $message);
+
+        return response([$contact, $result], 200);
     }
 
     /**
@@ -46,7 +59,12 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        $mails = Contact::all();
+
+        $contact->status = 1;
+        $contact->update();
+
+        return view('dashboard.contact.show', compact('contact', 'mails'));
     }
 
     /**
@@ -80,6 +98,8 @@ class ContactController extends Controller
      */
     public function destroy(Contact $contact)
     {
-        //
+        $contact->delete();
+
+        return redirect(route('contact.index'));
     }
 }

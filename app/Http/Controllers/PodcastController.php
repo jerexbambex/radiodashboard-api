@@ -140,7 +140,7 @@ class PodcastController extends Controller
      */
     public function podcastIndex(): PodcastResourceCollection
     {
-        return new PodcastResourceCollection(Podcast::paginate());
+        return new PodcastResourceCollection(Podcast::get());
     }
 
     /**

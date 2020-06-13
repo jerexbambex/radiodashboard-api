@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPositionToTeamsTable extends Migration
+class AddStatusToContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddPositionToTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->string('position')->default('OAP')->after('email');
+        Schema::table('contacts', function (Blueprint $table) {
+            $table->boolean('status')->default(0)->before('created_at');
         });
     }
 
@@ -25,8 +25,8 @@ class AddPositionToTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::table('teams', function (Blueprint $table) {
-            $table->dropColumn('position');
+        Schema::table('contacts', function (Blueprint $table) {
+            $table->dropColumn('status');
         });
     }
 }

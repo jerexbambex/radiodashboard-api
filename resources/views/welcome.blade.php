@@ -53,6 +53,24 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-icon mb-4">
+                    <div class="card-body text-center"><i class="i-Email"></i>
+                        <p class="text-muted mt-2 mb-2">Total messages</p>
+                        <p class="lead text-22 m-0">{{ $mails->count() }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-icon mb-4">
+                    <div class="card-body text-center"><i class="i-Email"></i>
+                        <p class="text-muted mt-2 mb-2">Podcasts</p>
+                        <p class="lead text-22 m-0">{{ $podcasts->count() }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{-- <div class="row">
             <div class="col-lg-8 col-md-12">
                 <div class="card mb-4">

@@ -18,20 +18,33 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/team', 'TeamController@teamIndex');
-Route::get('/team/{team}', 'TeamController@teamDisplay');
+Route::get('/teams', 'TeamController@teamIndex');
+Route::get('/teams/{team}', 'TeamController@teamDisplay');
 
-Route::get('/schedule', 'ScheduleController@scheduleIndex');
-Route::get('/schedule/{schedule}', 'ScheduleController@scheduleDisplay');
+Route::get('/schedules', 'ScheduleController@scheduleIndex');
+Route::get('/schedules/{schedule}', 'ScheduleController@scheduleDisplay');
+Route::get('/now-playing', 'ScheduleController@nowPlaying');
 
 Route::get('/about', 'AboutController@aboutIndex');
 Route::get('/about/{about}', 'AboutController@aboutDisplay');
 
-Route::get('/event', 'EventController@eventIndex');
-Route::get('/event/{event}', 'EventController@eventDisplay');
+Route::get('/events', 'EventController@eventIndex');
+Route::get('/events/{event}', 'EventController@eventDisplay');
 
-Route::get('/podcast', 'PodcastController@podcastIndex');
-Route::get('/podcast/{podcast}', 'PodcastController@podcastDisplay');
+Route::get('/podcasts', 'PodcastController@podcastIndex');
+Route::get('/podcasts/{podcast}', 'PodcastController@podcastDisplay');
 
-Route::get('/social', 'SocialController@socialIndex');
-Route::get('/social/{social}', 'SocialController@socialDisplay');
+Route::get('/socials', 'SocialController@socialIndex');
+Route::get('/socials/{social}', 'SocialController@socialDisplay');
+
+Route::get('/videos', 'VideoController@videoIndex');
+Route::get('/videos/{video}', 'VideoController@videoDisplay');
+
+Route::get('/details', 'DetailController@detailIndex');
+Route::get('/details/{detail}', 'DetailController@detailDisplay');
+
+Route::get('/sliders', 'SliderController@sliderIndex');
+Route::get('/sliders/{slider}', 'SliderController@sliderDisplay');
+
+Route::post('/post/subscribe', 'SubscribeController@store');
+Route::post('/post/contact', 'ContactController@store');

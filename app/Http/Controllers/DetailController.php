@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Detail;
+use App\Http\Resources\DetailResource;
+use App\Http\Resources\DetailResourceCollection;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -14,7 +16,9 @@ class DetailController extends Controller
      */
     public function index()
     {
-        //
+        $details = Detail::all();
+
+        return view('dashboard.detail.index', compact('details'));
     }
 
     /**
@@ -24,7 +28,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.detail.create');
     }
 
     /**
@@ -35,7 +39,16 @@ class DetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = request()->validate([
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
+
+        Detail::create($attributes);
+
+        request()->session()->flash('message', 'Details added successfully!');
+        return back();
     }
 
     /**
@@ -57,7 +70,7 @@ class DetailController extends Controller
      */
     public function edit(Detail $detail)
     {
-        //
+        return view('dashboard.detail.edit', compact('detail'));
     }
 
     /**
@@ -69,7 +82,16 @@ class DetailController extends Controller
      */
     public function update(Request $request, Detail $detail)
     {
-        //
+        $attributes = request()->validate([
+            'phone' => 'required',
+            'email' => 'required',
+            'address' => 'required',
+        ]);
+
+        $detail->update($attributes);
+
+        request()->session()->flash('message', 'Details added successfully!');
+        return back();
     }
 
     /**
@@ -81,5 +103,15 @@ class DetailController extends Controller
     public function destroy(Detail $detail)
     {
         //
+    }
+
+    public function detailIndex(): DetailResourceCollection
+    {
+        return new DetailResourceCollection(Detail::paginate());
+    }
+
+    public function detailDisplay(Detail $detail): DetailResource
+    {
+        return new DetailResource($detail);
     }
 }

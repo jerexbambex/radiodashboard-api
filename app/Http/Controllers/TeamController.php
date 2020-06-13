@@ -162,7 +162,7 @@ class TeamController extends Controller
      */
     public function teamIndex(): TeamResourceCollection
     {
-        return new TeamResourceCollection(Team::paginate());
+        return new TeamResourceCollection(Team::inRandomOrder()->get());
     }
 
     /**

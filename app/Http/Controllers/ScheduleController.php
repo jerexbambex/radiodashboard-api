@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ScheduleResource;
 use App\Http\Resources\ScheduleResourceCollection;
 use App\Schedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use JD\Cloudder\Facades\Cloudder;
 
@@ -161,7 +162,7 @@ class ScheduleController extends Controller
      */
     public function scheduleIndex(): ScheduleResourceCollection
     {
-        return new ScheduleResourceCollection(Schedule::paginate());
+        return new ScheduleResourceCollection(Schedule::get());
     }
 
     /**
@@ -171,6 +172,20 @@ class ScheduleController extends Controller
      */
     public function scheduleDisplay(Schedule $schedule): ScheduleResource
     {
+        return new ScheduleResource($schedule);
+    }
+
+    public function nowPlaying(): ScheduleResource
+    {
+        $now = Carbon::now();
+        $today= $now->format("l");
+        $time = $now->toTimeString();
+        $schedule = Schedule::where('start_time', '<=', $time)
+                            ->where('end_time', '>=', $time)
+                            ->where('day', $today)
+                            ->get();
+        // dd($today);
+
         return new ScheduleResource($schedule);
     }
 }

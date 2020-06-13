@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\SubscribeResource;
 use App\Subscribe;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class SubscribeController extends Controller
      */
     public function index()
     {
-        //
+        $subscribes = Subscribe::all();
+
+        return view('dashboard.subscribers.index', compact('subscribes'));
     }
 
     /**
@@ -35,7 +38,13 @@ class SubscribeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'email' => 'required | email | unique:subscribes',
+        ]);
+
+        $subscribe = Subscribe::create(request()->all());
+
+        return response($subscribe, 200);
     }
 
     /**
