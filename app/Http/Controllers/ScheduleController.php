@@ -180,9 +180,9 @@ class ScheduleController extends Controller
         $now = Carbon::now();
         $today= $now->format("l");
         $time = $now->toTimeString();
-        $schedule = Schedule::where('start_time', '<=', $time)
+        $schedule = Schedule::where('day', $today)
+                            ->where('start_time', '<=', $time)
                             ->where('end_time', '>=', $time)
-                            ->where('day', $today)
                             ->get();
         // dd($today);
 
