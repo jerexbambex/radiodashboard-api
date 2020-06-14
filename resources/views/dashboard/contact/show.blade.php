@@ -60,7 +60,7 @@
                                 </div>
                                 <h4 class="mb-3">Subject: {{ $contact->subject }}</h4>
                                 <div>
-                                    {{ $contact->message }}
+                                    {!! nl2br(e($contact->message)) !!}
                                 </div>
                                 <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
                                     <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>

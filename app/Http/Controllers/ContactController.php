@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        $mails = Contact::all();
+        $mails = Contact::orderBy('created_at', 'DESC')->get();
 
         return view('dashboard.contact.index', compact('mails'));
     }
