@@ -188,4 +188,11 @@ class ScheduleController extends Controller
 
         return new ScheduleResource($schedule);
     }
+
+    public function singleDay($schedule): ScheduleResource
+    {
+        $scheduleDisplay = Schedule::where('day', $schedule)->get();
+
+        return new ScheduleResource($scheduleDisplay);
+    }
 }

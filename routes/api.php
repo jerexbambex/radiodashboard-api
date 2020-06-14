@@ -23,6 +23,7 @@ Route::get('/teams/{team}', 'TeamController@teamDisplay');
 
 Route::get('/schedules', 'ScheduleController@scheduleIndex');
 Route::get('/schedules/{schedule}', 'ScheduleController@scheduleDisplay');
+Route::get('/schedules/day/{schedule}', 'ScheduleController@singleDay');
 Route::get('/now-playing', 'ScheduleController@nowPlaying');
 
 Route::get('/about', 'AboutController@aboutIndex');
@@ -48,3 +49,4 @@ Route::get('/sliders/{slider}', 'SliderController@sliderDisplay');
 
 Route::post('/post/subscribe', 'SubscribeController@store');
 Route::post('/post/contact', 'ContactController@store');
+
